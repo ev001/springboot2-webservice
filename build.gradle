@@ -1,0 +1,35 @@
+buildscript { // '프로젝트' 플러그인 의존성 관리를 위한 설정. Not '인텔리제이' 플러그인 관리.
+    ext { //ext : 전역변수로 선언하겠다.
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") // pjd
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management' // 스프링부트의 의존성관리를 위해 꼭 필요
+
+group 'com.dennis.book'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories { // 각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을지를 정해준다.
+               // 기본적으로 mavenCentral 사용하나 업로드 난이도 때문에 jcenter도 많이 사용
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {  // 프로젝트 개발에 필요한 의존성들을 선언하는곳
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile ('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+
