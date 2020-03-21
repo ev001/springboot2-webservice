@@ -1,13 +1,13 @@
 buildscript { // '프로젝트' 플러그인 의존성 관리를 위한 설정. Not '인텔리제이' 플러그인 관리.
     ext { //ext : 전역변수로 선언하겠다.
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.1.9.RELEASE'
     }
     repositories {
         mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") // pjd
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
@@ -30,6 +30,5 @@ dependencies {  // 프로젝트 개발에 필요한 의존성들을 선언하는
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile ('org.springframework.boot:spring-boot-starter-test')
 }
-
 
 
