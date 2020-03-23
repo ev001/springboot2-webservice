@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // 선언할 경우 @Controller, @ControllerAdvice 등 사용가능
 // But, @Service, @Component, @Repository 등은 사용 불가
 // 여기서는 컨트롤러만 사용하기 때문에 선언.
-@WebMvcTest //(controllers = {HelloController.class}, secure = false)
+@WebMvcTest
 public class HelloControllerTest {
     @Autowired // 스프링이 관리하는 빈(Bean)을 주입받는다.
     private MockMvc mvc;    // <- 웹 API를 테스트 할 때 사용.
